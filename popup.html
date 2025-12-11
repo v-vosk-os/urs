@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URS - Universal Research Suite</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="popup-container">
+        <!-- Header -->
+        <div class="header">
+            <h2>URS Research Suite</h2>
+            <div class="header-controls">
+                <button id="sticky-btn" class="control-btn" title="Keep window open">
+                    📌
+                </button>
+                <button id="resize-btn" class="control-btn" title="Resize window">
+                    ⤢
+                </button>
+                <button id="settings-btn" class="control-btn" title="Settings">
+                    ⚙️
+                </button>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div id="status-bar" class="status-bar">
+            <span class="status-indicator" id="api-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Checking...</span>
+            </span>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Tools Section -->
+            <div class="tools-section">
+                <h3>Tavily Tools</h3>
+                <div class="tool-buttons">
+                    <button class="tool-btn" data-tool="search">
+                        🔍 Search
+                    </button>
+                    <button class="tool-btn" data-tool="extract">
+                        📋 Extract
+                    </button>
+                    <button class="tool-btn" data-tool="map">
+                        🗺️ Map
+                    </button>
+                    <button class="tool-btn" data-tool="crawl">
+                        🕷️ Crawl
+                    </button>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h3>AI Skills</h3>
+                <div class="skill-buttons">
+                    <button class="skill-btn" data-skill="summarize">
+                        📝 Summarize
+                    </button>
+                    <button class="skill-btn" data-skill="fact-check">
+                        ✅ Fact Check
+                    </button>
+                    <button class="skill-btn" data-skill="report">
+                        📊 Create Report
+                    </button>
+                    <button class="skill-btn" data-skill="analyze">
+                        🔬 Analyze
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tavily Expert MCP Tools Section -->
+            <div id="mcp-tools-section" class="mcp-tools-section hidden">
+                <h3>🔧 Tavily Expert Tools</h3>
+                <div class="mcp-tool-buttons">
+                    <!-- MCP tools will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-header">
+                    <label>Input</label>
+                    <button id="add-file-btn" class="plus-btn" title="Add File">
+                        ➕
+                    </button>
+                </div>
+                <textarea id="input-text" placeholder="Enter text or URL here..."></textarea>
+                
+                <!-- File Upload Section -->
+                <div id="file-upload-section" class="file-upload-section hidden">
+                    <div id="drop-zone" class="drop-zone">
+                        <div class="drop-zone-content">
+                            <span class="drop-icon">📁</span>
+                            <p>Drag your file here or click to upload</p>
+                            <p class="file-info">Max 5MB • .txt, .docx, .pdf, .md, .pptx, .csv, .xlsx</p>
+                        </div>
+                        <input type="file" id="file-input" accept=".txt,.docx,.pdf,.md,.pptx,.csv,.xlsx" hidden>
+                    </div>
+                    <div id="file-preview" class="file-preview hidden">
+                        <div class="file-preview-header">
+                            <span id="file-name">No file selected</span>
+                            <button id="remove-file" class="remove-file-btn">✕</button>
+                        </div>
+                        <div id="file-details" class="file-details"></div>
+                    </div>
+                </div>
+                
+                <button id="execute-btn" class="execute-btn">Execute</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="results-section hidden">
+                <div class="results-header">
+                    <h3>Results</h3>
+                    <button id="clear-results" class="clear-btn">Clear</button>
+                </div>
+                <div id="results-content" class="results-content">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Panel (Hidden by default) -->
+        <div id="settings-panel" class="settings-panel hidden">
+            <h3>Settings</h3>
+            <div class="setting-item">
+                <label for="window-width">Window Width:</label>
+                <input type="range" id="window-width" min="350" max="800" value="450">
+                <span id="width-value">450px</span>
+            </div>
+            <div class="setting-item">
+                <label for="window-height">Window Height:</label>
+                <input type="range" id="window-height" min="400" max="900" value="600">
+                <span id="height-value">600px</span>
+            </div>
+            <div class="setting-item">
+                <label for="api-endpoint">API Endpoint:</label>
+                <input type="text" id="api-endpoint" value="http://localhost:8000">
+            </div>
+            <div class="setting-item">
+                <label for="mcp-endpoint">MCP Server:</label>
+                <input type="text" id="mcp-endpoint" value="http://localhost:8001">
+            </div>
+            <div class="setting-actions">
+                <button id="save-settings">Save</button>
+                <button id="cancel-settings">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
