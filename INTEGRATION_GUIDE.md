@@ -24,7 +24,7 @@ The URS Chrome Extension has been successfully integrated with the Tavily Expert
 
 #### New File: `backend/.env`
 - Configuration file with all API keys and settings
-- MCP_REMOTE_URL configured: `https://tavily.api.tadata.com/mcp/tavily/tech-news-clutch-9em8ct`
+- MCP_REMOTE_URL configured: `
 
 ### 2. **Frontend Changes**
 
@@ -54,7 +54,7 @@ The URS Chrome Extension has been successfully integrated with the Tavily Expert
 {
   "mcpServers": {
     "Tavily Expert": {
-      "url": "https://tavily.api.tadata.com/mcp/tavily/tech-news-clutch-9em8ct"
+      "url": "\
     }
   }
 }
@@ -62,9 +62,9 @@ The URS Chrome Extension has been successfully integrated with the Tavily Expert
 
 #### `backend/.env`
 ```env
-MCP_REMOTE_URL=https://tavily.api.tadata.com/mcp/tavily/tech-news-clutch-9em8ct
-TAVILY_API_KEY=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
-API_KEY=AIzaSyAbWwaeENtkj97wqqkkHkznrEp_QszIsWs
+MCP_REMOTE_URL=
+TAVILY_API_KEY=
+API_KEY=
 ```
 
 ## 🚀 How to Use
@@ -138,7 +138,7 @@ Expected response includes:
     "gemini": "available",
     "tavily_expert_mcp": "available"
   },
-  "mcp_remote_url": "https://tavily.api.tadata.com/mcp/tavily/tech-news-clutch-9em8ct"
+  "mcp_remote_url": 
 }
 ```
 
@@ -248,7 +248,7 @@ Chrome Extension displays formatted results
 
 ## 🔗 Resources
 
-- **Tavily Expert MCP URL**: https://tavily.api.tadata.com/mcp/tavily/tech-news-clutch-9em8ct
+- **Tavily Expert MCP URL**:
 - **Backend Health**: http://localhost:8000/health
 - **MCP Tools List**: http://localhost:8000/api/mcp/tools
 - **Chrome Extension**: chrome://extensions/
