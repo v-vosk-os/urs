@@ -1,18 +1,18 @@
 # Tavily API Configuration
-TAVILY_API_KEY=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
+TAVILY_API_KEY=xxxxx
 
 # Backup Tavily Keys
-# TAVILY_API_KEY_2=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
-# TAVILY_API_KEY_3=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
+# TAVILY_API_KEY_2=xxxxxxx
+# TAVILY_API_KEY_3=
 
 # API Configuration
-API_KEY=AIzaSyAbWwaeENtkj97wqqkkHkznrEp_QszIsWs
+API_KEY=
 
 # OpenAI API Configuration (Optional)
 OPENAI_API_KEY=
 
 # MCP Server Configuration
-MCP_REMOTE_URL=https://mcp.tavily.com/mcp/?tavilyApiKey=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
+MCP_REMOTE_URL=xxxxxx
 MCP_SERVER_URL=http://localhost:8001
 
 # Server Configuration
